@@ -1,0 +1,393 @@
+/* Portfolio Page — Settimana I, Giorno IV
+   Box model applicato al giorno III.
+   Approccio: Mobile-First */
+
+
+/* Reset minimale */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+
+/* Body: tipografia di base */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #2b2b2b;
+  background-color: #fafafa;
+}
+
+
+/* Header */
+#site-header {
+  background-color: hsl(220, 40%, 20%);
+  background-image: url("../img/header-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  text-align: center;
+  line-height: 2.4;
+  padding: 60px 20px 40px;
+  border-bottom: 4px solid hsl(45, 90%, 60%);
+  position: sticky;
+  top: 0;
+  z-index: 100; 
+}
+
+#site-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+  color: rgb(220, 220, 220);
+  font-style: italic;
+}
+
+
+/* Nav */
+#site-header nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+#site-header nav li {
+  display: inline-block;
+}
+
+#site-header nav a {
+  color: hsl(45, 90%, 70%);
+  font-weight: bold;
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 0 4px;
+  border-radius: 4px;
+  line-height: 1.6;
+}
+
+#site-header nav a:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* Main centrato */
+main {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+
+/* Sezioni come card (Mobile: larghezza massima) */
+main section {
+  background-color: #ffffff;
+  padding: 32px;
+  margin-bottom: 24px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+}
+
+
+/* Titoli del main con marker */
+h2 {
+  font-size: 1.8rem;
+  color: hsl(220, 60%, 30%);
+  text-align: left;
+  line-height: 1.6;
+}
+
+main section h2::before {
+  content: "— ";
+  color: hsl(45, 90%, 50%);
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: hsl(220, 30%, 25%);
+  text-align: left;
+  line-height: 2.2;
+}
+
+
+/* Sezione "Chi sono": avatar centrato (per base Mobile) */
+.avatar {
+  width: 110px;
+  height: 110px;
+  border: 4px solid hsl(45, 90%, 60%);
+  border-radius: 50%;
+  display: block;
+  /* Rimosso float, aggiunto solo da visualizzazione tablet in poi (768px) */
+  margin: 0 auto 20px auto;
+  /* Centrato con un po' di spazio sotto */
+}
+
+#chi-sono {
+  text-align: justify;
+}
+
+#chi-sono p:first-of-type {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: hsl(220, 30%, 25%);
+}
+
+/* Rimozione del float e del margin-right per il primo paragrafo della sezione "Chi sono" su mobile */
+#chi-sono p:first-of-type::first-letter {
+  font-size: inherit;
+  font-weight: inherit;
+  float: none;
+  margin-right: 0;
+  color: inherit;
+}
+
+/* Sezione successiva: clear del float dell'avatar (utile su tablet/desktop) */
+#competenze {
+  clear: both;
+}
+
+
+/* Lista competenze a righe alternate */
+.skill-list {
+  line-height: 2.2;
+}
+
+.skill-list li:nth-child(odd) {
+  background-color: #f5f7fb;
+}
+
+.skill-list li:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.skill-list li:first-child {
+  font-weight: bold;
+}
+
+
+/* Progetti alternati + tag NEW sul primo */
+.project:nth-of-type(odd) {
+  background-color: hsl(45, 60%, 96%);
+}
+
+.project:nth-of-type(even) {
+  background-color: #ffffff;
+}
+
+.project {
+  position: relative;
+}
+/* NEW attaccato in alto a destra */
+
+.project:first-of-type::after {
+  content: "NEW";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 8px;
+  background-color: hsl(0, 70%, 50%);
+  color: #ffffff;
+  font-size: 0.75rem;
+}
+
+/* Form contatti riscritto per mobile di base */
+label {
+  font-weight: bold;
+  color: hsl(220, 60%, 25%);
+}
+
+input,
+textarea {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  /* Per mobile di base width larga quanto i form */
+  background-color: #f5f7fb;
+}
+
+input:focus,
+textarea:focus {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+#consenso {
+  width: auto;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999999;
+  font-style: italic;
+}
+
+button {
+  color: #ffffff;
+  background-color: hsl(220, 60%, 30%);
+  font-weight: bold;
+  width: 100%;
+  /* Per mobile di base width larga quanto i form */
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  color: hsl(45, 90%, 80%);
+  background-color: hsl(220, 60%, 45%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Footer */
+#site-footer {
+  background-color: hsl(220, 40%, 15%);
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 2.4;
+  padding: 30px 20px;
+}
+
+/* Modal per il form di contatto */
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  z-index: 1000;
+}
+
+.active {
+  display: block;
+}
+
+.modal {
+  position: absolute;
+  background-color: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.redCross {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: gainsboro;
+  color: red;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: none;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.redCross:hover {
+  background-color: rgb(255, 0, 0);
+  color: black;
+  box-shadow: none;
+}
+
+
+/*Bottone per risalire in cima alla pagina fixed*/
+
+#topPage {
+  background-image: url('../img/freccia-bottone.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 999;
+  cursor: pointer;
+}
+
+#topPage:hover {
+  background-color: hsl(207, 97%, 38%);
+}
+
+
+
+
+
+/* Media Query */
+
+/* TABLET (min-width: 768px)
+   - Rimetto float per avatar
+   - Form 60%
+   - Bottone al 30% (metà del form)*/
+
+@media screen and (min-width: 768px) {
+
+  /* Ripristina il float per l'avatar */
+  .avatar {
+    float: left;
+    margin: 0 24px 12px 0;
+  }
+
+
+  #chi-sono p:first-of-type::first-letter {
+    font-size: 3rem;
+    font-weight: bold;
+    float: left;
+    margin-right: 6px;
+    color: hsl(220, 60%, 30%);
+  }
+
+  /* Form tornano alla larghezza desktop */
+  input,
+  textarea {
+    width: 60%;
+  }
+
+  /* Bottone di dimensioni 50% della larghezza dei form (30% perché è la metà della larghezza dei form, che è 60%) */
+  button {
+    width: 30%;
+  }
+}
+
+
+/* DESKTOP (min-width: 1200px)
+   - h1 e h2 aumentano di dimensioni */
+@media screen and (min-width: 1200px) {
+
+  h1 {
+    font-size: 6rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+}
