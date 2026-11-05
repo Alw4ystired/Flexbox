@@ -12,13 +12,14 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
+html {
+    scroll-padding-top: 400px; 
+     /* Per scrollare fino a 400px sotto l'header sticky */
 }
-
 
 /* Body: tipografia di base */
 body {
+    margin: 0;
     font-family: "Helvetica Neue", Arial, sans-serif;
     font-size: 16px;
     line-height: 1.7;
@@ -30,6 +31,7 @@ body {
     /* mette in colonna header main e footer */
     min-height: 100vh;
     /* con questa min-height il body occupa tutta l'altezza dello schermo */
+    
 }
 
 /*Animazione main*/
