@@ -460,12 +460,46 @@ button:hover {
         opacity: 0;
         transform: translateY(-20px) scale(0.95);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
 }
 
+/* Animazioni di chiusura del modal e dell'overlay che NON FUNZIONA VA FIXATA */
+
+@keyframes overlay-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes modal-out {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+}
+
+/* forwards mantiene l'ultimo frame (opacity 0) finché non rimuovi la classe, così non vedi "flash" di riapparizione. Ma comunque non funziona, piango.*/
+
+.overlay.closing {
+    animation: overlay-out 200ms ease forwards;
+}
+
+.modal.closing {
+    animation: modal-out 200ms ease forwards;
+}
 
 
 /*Bottone per risalire in cima alla pagina fixed*/
@@ -489,6 +523,20 @@ button:hover {
     background-color: hsl(207, 97%, 38%);
 }
 
+/* keyframes per l'animazione del bottone */
+@keyframes button-pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
 
 /* Media Query */
 
