@@ -411,7 +411,7 @@ button:hover {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
+    z-index: 3000;
     /* .active rende overlay visibile, ma non lo centra. Per centrarlo ho aggiunto display: flex nella classe .active. Ho aggiunto justify-content: center per l'asse
      orizzontale. */
     align-items: center;
@@ -654,3 +654,18 @@ button:hover {
         font-size: 3rem;
     }
 }
+
+/* Media query per accessibilità: riduzione animazioni */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+}
+
