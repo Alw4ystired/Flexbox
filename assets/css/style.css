@@ -491,7 +491,7 @@ button:hover {
     }
 }
 
-/* forwards mantiene l'ultimo frame (opacity 0) finché non rimuovi la classe, così non vedi "flash" di riapparizione. Ma comunque non funziona, piango.*/
+/* forwards mantiene l'ultimo frame (opacity 0) finché non si rimuove la classe. Ma comunque non funziona, piango.*/
 
 .overlay.closing {
     animation: overlay-out 200ms ease forwards;
@@ -517,10 +517,23 @@ button:hover {
     border-radius: 50%;
     z-index: 999;
     cursor: pointer;
+    animation: pulse-ring 2s infinite;
 }
 
 #topPage:hover {
     background-color: hsl(207, 97%, 38%);
+}
+
+/* Questa keyframe ho provato a farla con from/to e funziona comunque */
+
+@keyframes pulse-ring {
+    from {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(34, 76, 161, 0.6);
+    }
+
+    to {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 0 18px rgba(34, 76, 161, 0);
+    }
 }
 
 /* keyframes per l'animazione del bottone */
