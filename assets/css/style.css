@@ -32,6 +32,42 @@ body {
     /* con questa min-height il body occupa tutta l'altezza dello schermo */
 }
 
+/*Animazione main*/
+.container main section {
+    animation: section-in 500ms ease-out both;
+}
+
+@keyframes section-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container main section:nth-of-type(1) {
+    animation-delay: 0ms;
+}
+
+.container main section:nth-of-type(2) {
+    animation-delay: 80ms;
+}
+
+.container main section:nth-of-type(3) {
+    animation-delay: 160ms;
+}
+
+.container main section:nth-of-type(4) {
+    animation-delay: 240ms;
+}
+
+.container main section:nth-of-type(5) {
+    animation-delay: 320ms;
+}
 
 /* Header */
 #site-header {
@@ -515,7 +551,7 @@ button:hover {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    z-index: 999;
+    z-index: 1400;
     cursor: pointer;
     animation: pulse-ring 2s infinite;
 }
@@ -568,7 +604,7 @@ button:hover {
     }
 
     .avatar:hover {
-        transform: scale (1.05), rotate (-2deg);
+        transform: scale(1.05), rotate(-2deg);
         box-shadow: 0 20px 44px rgba(0, 0, 0, 0.50);
     }
 
