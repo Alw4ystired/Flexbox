@@ -221,8 +221,9 @@ h3 {
     padding: 6px 14px;  
     border-radius: 20px; 
     border: 2px solid transparent; 
-    box-shadow: none; 
+    box-shadow:  0 2px 6px rgba(0, 0, 0, 0.562);; 
     cursor: pointer;
+    transition: transform 150ms ease;
 
 }
 
@@ -231,6 +232,7 @@ h3 {
     color: hsl(220, 60%, 30%);
     border-color: hsl(220, 60%, 30%);
     box-shadow: none;
+    transform: translateY(-4px);
 }
 
 /* Progetti alternati + tag NEW sul primo */
@@ -258,9 +260,15 @@ h3 {
     padding: 20px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.486);
+    transition: transform 200ms ease, box-shadow 200ms ease;
 }
 
+.project:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.705);
+
+}
 
 /* NEW attaccato in alto a destra */
 
@@ -438,6 +446,12 @@ button:hover {
     .avatar {
         float: left;
         margin: 0 24px 12px 0;
+        transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .avatar:hover {
+        transform: scale (1.05),  rotate (-2deg);
+        box-shadow: 0 20px 44px rgba(0, 0, 0, 0.50);
     }
 
     #chi-sono p:first-of-type::first-letter {
