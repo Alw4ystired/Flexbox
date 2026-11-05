@@ -23,6 +23,7 @@
             </ul>
         </nav>
     </header>
+
     <div class="container">
         <main>
 
@@ -88,6 +89,7 @@
                     </tbody>
                 </table>
             </section>
+
             <section id="progetti">
                 <h2>Progetti</h2>
                 <p>I lavori fatti durante le prime settimane di corso.</p>
@@ -112,67 +114,74 @@
             <section id="contatti">
                 <h2>Contattami</h2>
                 <button type="button" id="openModal">Clicca qua</button>
-                <div class="overlay">
-                    <div class="modal">
-                        <button class="redCross closeModal">❌</button>
-                        <p>Compila il form per scrivermi. Ti rispondo entro 24 ore.</p>
-
-                        <form action="#" method="POST">
-
-                            <p>
-                                <label for="nome">Nome</label><br>
-                                <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
-                            </p>
-
-                            <p>
-                                <label for="email">Email</label><br>
-                                <input type="email" id="email" name="email" placeholder="tu@esempio.it" required>
-                            </p>
-
-                            <p>
-                                <label for="motivo">Motivo del contatto</label><br>
-                                <select id="motivo" name="motivo">
-                                    <option value="lavoro">Proposta di lavoro</option>
-                                    <option value="collaborazione">Collaborazione su un progetto</option>
-                                    <option value="info">Richiesta di informazioni</option>
-                                    <option value="altro">Altro</option>
-                                </select>
-                            </p>
-
-                            <p>
-                                <label for="data">Data preferita per la risposta</label><br>
-                                <input type="date" id="data" name="data">
-                            </p>
-
-                            <p>
-                                <label for="messaggio">Messaggio</label><br>
-                                <textarea id="messaggio" name="messaggio" rows="5"
-                                    placeholder="Scrivi qui il tuo messaggio..." required></textarea>
-                            </p>
-
-                            <p>
-                                <input type="checkbox" id="consenso" name="consenso" required>
-                                <label for="consenso">Accetto di essere ricontattato all'indirizzo indicato</label>
-                            </p>
-
-                            <p>
-                                <button type="submit">Invia</button>
-                            </p>
-
-                        </form>
-                    </div>
-                </div>
+                <!-- L'overlay NON è più qui: è stato spostato in fondo al body -->
             </section>
-          
+
         </main>
-    <a href="#">
-        <div id="topPage"></div>
-    </a>
+
+        <a href="#">
+            <div id="topPage"></div>
+        </a>
     </div>
 
     <footer id="site-footer">
         <p>© 2026 Mario Rossi</p>
     </footer>
+
+    
+    <!-- OVERLAY SPOSTATO QUI: diventa figlio diretto di body, fuori da qualsiasi section animata, altrimenti l'animazione della modale non funzionava bene -->
+   
+    <div class="overlay">
+        <div class="modal">
+            <button class="redCross closeModal">❌</button>
+            <p>Compila il form per scrivermi. Ti rispondo entro 24 ore.</p>
+
+            <form action="#" method="POST">
+
+                <p>
+                    <label for="nome">Nome</label><br>
+                    <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+                </p>
+
+                <p>
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" name="email" placeholder="tu@esempio.it" required>
+                </p>
+
+                <p>
+                    <label for="motivo">Motivo del contatto</label><br>
+                    <select id="motivo" name="motivo">
+                        <option value="lavoro">Proposta di lavoro</option>
+                        <option value="collaborazione">Collaborazione su un progetto</option>
+                        <option value="info">Richiesta di informazioni</option>
+                        <option value="altro">Altro</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="data">Data preferita per la risposta</label><br>
+                    <input type="date" id="data" name="data">
+                </p>
+
+                <p>
+                    <label for="messaggio">Messaggio</label><br>
+                    <textarea id="messaggio" name="messaggio" rows="5"
+                        placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+                </p>
+
+                <p>
+                    <input type="checkbox" id="consenso" name="consenso" required>
+                    <label for="consenso">Accetto di essere ricontattato all'indirizzo indicato</label>
+                </p>
+
+                <p>
+                    <button type="submit">Invia</button>
+                </p>
+
+            </form>
+        </div>
+    </div>
+
     <script src="assets/js/script.js"></script>
 
 </body>
